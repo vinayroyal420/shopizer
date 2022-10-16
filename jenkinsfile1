@@ -1,12 +1,12 @@
 pipeline {
     agent  { label 'OPENJDK-11' }
     triggers{
-        pollSCM('5 * * * *')
+        pollSCM('* * * * *')
     }
     stages {
         stage('vcs') {
             steps {
-                git branch: 'develop', url: 'https://github.com/vinayroyal420/shopizer.git'
+                git branch: 'release', url: 'https://github.com/vinayroyal420/shopizer.git'
             }
         }
         stage('build') {
